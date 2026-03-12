@@ -1,25 +1,56 @@
 # TermiteSight
 
-TermiteSight is a map-based termite inspection application.
+Mobile-first termite and WDO inspection app centered around an interactive map inspection canvas.
 
-The platform allows inspectors to visually perform inspections by placing findings directly on a structure footprint.
+## Stack
 
-Key Features
+- Next.js App Router + TypeScript
+- TailwindCSS
+- Mapbox GL JS (satellite map)
+- Supabase (database + storage)
 
-Map-assisted structure footprints
-Tap-based termite findings
-Photo attachments
-WDO inspection report export
+## Features in v1
 
-Technology
+- Address search with Mapbox geocoding
+- Satellite map inspection canvas
+- Add and edit structure footprints as GeoJSON polygons
+- Structure labels on map
+- Place finding markers tied to selected structures
+- Finding detail drawer for category and notes
+- Photo attachment upload to Supabase Storage
+- Save inspection draft to Supabase tables
+- WDO report PDF export (client-side)
 
-Next.js
-React
-TypeScript
-Mapbox
-Supabase
-Vercel
+## Getting started
 
-Deployment
+1. Install dependencies:
 
-Designed to deploy directly to Vercel.
+```bash
+npm install
+```
+
+2. Copy env file:
+
+```bash
+cp .env.example .env.local
+```
+
+3. Fill in your Mapbox and Supabase values.
+
+4. Run local development server:
+
+```bash
+npm run dev
+```
+
+5. Apply database schema to Supabase SQL editor using `supabase/schema.sql`.
+
+## Vercel deployment
+
+- Import this repository into Vercel.
+- Ensure the project framework is **Next.js**.
+- In Project Settings → Build & Output Settings, clear any custom **Output Directory** (do not set `public` for Next.js apps).
+- Set environment variables from `.env.example` in the Vercel dashboard.
+- Deploy with default Next.js build settings.
+- This repo includes `vercel.json` to pin framework/build commands for consistent deployments.
+
